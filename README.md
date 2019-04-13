@@ -3,7 +3,7 @@
 Setup Time: 30min
 
 What does this do?  
-- Has particle sketch which is triggered by people walking in front of it, the particles fill the outline of the person detected. A few seconds after detection an audio track plays and the speech recognition is turned on and is listening. You can talk to the computer and a set of pre-recorded tracks playback mimicing a conversation.  
+- This has particle sketch which is triggered by people walking in front of it, the particles fill the outline of the person detected. A few seconds after detection an audio track plays and the speech recognition is turned on and is listening. You can talk to the computer and a set of pre-recorded tracks playback mimicing a conversation.  
 
 Requirements:  
 Windows 10 + Kinect SDK installed  
