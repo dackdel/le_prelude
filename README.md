@@ -6,8 +6,10 @@ What does this do?
 - This has particle sketch which is triggered by people walking in front of it, the particles fill the outline of the person detected. A few seconds after detection an audio track plays and the speech recognition is turned on and is listening. You can talk to the computer and a set of pre-recorded tracks playback mimicing a conversation.  
 
 Requirements:  
-Windows 10 + Kinect SDK installed  
+Windows 10 + Kinect SDK installed (https://www.microsoft.com/en-in/download/details.aspx?id=44561) 
 A Kinect V2  
+Processing (https://processing.org/download/)
+A Browser
 
 Dependencies:   
 https://github.com/IDMNYU/p5.js-speech P5 Speech (included in this repo)  
@@ -18,5 +20,6 @@ https://github.com/ThomasLengeling/KinectPV2 KinectPV2 (install this in processi
 Steps:  
 Install node js (https://nodejs.org/en/download/).   
 You need to run p5_talk as a server using http-server(https://www.npmjs.com/package/http-server) or browser-sync(https://www.browsersync.io/) via the command line or host it online. It will spit out a 4 digit localhost port number. Then type "localhost:xxxx" xxxx is the port number in chrome or any browser that supports web speech api.  
-You need the processing app (https://processing.org/download/) to run kinect_particles.  
-You need to install the WebSocketsP5 library inside the processing library folder.  
+You need to run kinect_particles in Processing.  
+
+Fin  
