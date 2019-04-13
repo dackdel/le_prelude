@@ -16,7 +16,7 @@ https://github.com/muthesius/WebSocketP5 WebSocketP5 (install this in processing
 https://github.com/ThomasLengeling/KinectPV2 KinectPV2 (install this in processing library folder)  
 
 Steps:  
-Install node js (https://nodejs.org/en/download/)
-You need to run p5_talk as a server using http-server(https://www.npmjs.com/package/http-server) or browser-sync(https://www.browsersync.io/) via the command line or host it online. It will spit out a 4 digit localhost port number. Then type "localhost:xxxx" xxxx is the port number in 
+Install node js (https://nodejs.org/en/download/)  
+You need to run p5_talk as a server using http-server(https://www.npmjs.com/package/http-server) or browser-sync(https://www.browsersync.io/) via the command line or host it online. It will spit out a 4 digit localhost port number. Then type "localhost:xxxx" xxxx is the port number in chrome or any browser that supports web speech api.  
 You need the processing app (https://processing.org/download/) to run kinect_particles.  
 You need to install the WebSocketsP5 library inside the processing library folder.  
