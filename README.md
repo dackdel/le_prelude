@@ -1,5 +1,3 @@
-# le_prelude   
-
 Setup Time: 30min
 
 What does this do?  
