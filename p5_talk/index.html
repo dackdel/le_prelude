@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>talkk</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/icon">
+    <script type="text/javascript" src="lib/p5.min.js"></script>
+    <script type="text/javascript" src="lib/addons/p5.dom.min.js"></script>
+    <script type="text/javascript" src="lib/addons/p5.sound.min.js"></script>
+    <script type="text/javascript" src="lib/addons/p5.speech.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="sketch.js"></script>
+    <script type="text/javascript">
+	    var ws = null;
+	    var host = "localhost"
+	    var port = 8080
+	    var socket = "p5websocket"
+
+	    function ready() {
+	        console.log("trying to open a websocket")
+	        var _socket = (undefined == socket) ? "" : "/" + socket
+	        _url = "ws://" + host + ":" + port + _socket
+	        if ('MozWebSocket' in window) ws = new MozWebSocket(_url);
+	        else ws = new WebSocket(_url);
+	        // When the connection is open, send some data to the server
+	        ws.onopen = function() {
+	            console.log("opened")
+	            ws.send('Ping'); // Send the message 'Ping' to the server
+	        };
+	        // oh, did it close
+	        ws.onerror = function(e) {
+	            console.log('WebSocket did close ', e);
+	        };
+	        // Log errors
+	        ws.onerror = function(error) {
+	            console.log('WebSocket Error ' + error);
+	        };
+	        // wait function
+	        function wait(ms) {
+	        	var start = new Date().getTime();
+	        	var end = start;
+	        	while (end < start + ms) {
+	        		end = new Date().getTime();
+	        	}
+	        }
+	        // Log messages from the server and play first track
+	        ws.onmessage = function(e) {
+	            $('#log').text(e.data + $('#log').text())
+	            console.log('Server: ' + e.data);
+	            if (currentSong == 0) {
+		            wait(4000);
+		            songs[currentSong].playMode('untilDone');
+		            songs[currentSong].play();
+		            currentSong++;
+		            console.log(currentSong);
+	   			}     	 
+	        };
+	    }
+	    document.addEventListener("DOMContentLoaded", ready, false);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
